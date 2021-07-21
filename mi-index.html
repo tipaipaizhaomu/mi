@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        div {
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            width: 1515px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:link {
+            color: rgb(196, 196, 177);
+        }
+        a:visited {
+            color: rgb(196, 196, 177);
+        }
+        a:hover {
+            color: rgb(255, 255, 255);
+        }
+        .guding {
+            height: 400px;
+            width: 100px;
+            position: fixed;
+            left: 1425px;
+            top: 225px;
+            /* background-color: #2daaf3; */
+            z-index: 99;
+        }
+        .guding a {
+            display: inline-block;
+            height: 65px;
+            width: 100px;
+            margin-top: 15px;
+            color: #515455;
+            transition: all .3s ease;
+        }
+        .guding a:hover{
+            color: #f3962d;
+        }
+        .guding a img {
+            height: 40px;
+            margin-bottom: -20px;
+            transition: all .3s ease;
+        }
+        .headtitle {
+            background-color: rgb(37, 35, 35);
+            height: 40px;
+            line-height: 40px;
+
+            color: rgb(169, 170, 170);
+            font-size: 7px;
+            font-weight: 300;
+            position: relative;
+        }
+        .headtitle div {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            height: 40px;
+            width: 1200px;
+        }
+        .divsecond {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 660px;
+            height: 200px;
+            width: 0px;
+            color: rgb(214, 28, 69);
+            box-shadow: 0 0 10px black;
+            z-index: 5;
+            transition:all .4s ease;
+        }
+        .headtitle div a {
+            display: inline-block;
+            width: auto;
+            margin: 0 4px;
+        }
+        .firstsearch {
+            height: 100px;
+            /* width: 1535px; */
+            line-height: 100px;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 0px;
+            position: relative;
+            overflow: hidden;
+            transition: all .5s ease;
+            /* background-color: aqua; */
+            box-shadow: 0 0 25px black;
+            z-index: 4;
+        }
+        .firstsearch:hover {
+            height: 300px;
+        }
+        .firstsearch div {
+            height: 120px;
+            width: 650px;
+            position: absolute;
+            top: 0;
+            left: 350px;
+        }
+        .firstsearch a {
+            display: inline-block;
+            height: 0px;
+            color: black;
+            font-size: 17px;
+            font-weight: 200;
+            padding: 0px 3px;
+            background-color: aqua;
+        }
+        .firstsearch a:hover {
+            color: rgb(241, 133, 32);
+        }
+        .firstsearch .search {
+            height: 50px;
+            width: 250px;
+            position: absolute;
+            top: 25px;
+            left: 1050px;
+            border: solid 1px rgb(100, 100, 100,.4);
+            font-size: 16px;
+            color: rgb(107, 110, 112,.5);
+        }
+        .searchnew {
+            height: 50px;
+            width: 250px;
+            position: absolute;
+            top: 25px;
+            left: 1050px;
+            border: solid 1px rgb(100, 100, 100,.4);
+            font-size: 16px;
+            color: rgba(0, 0, 0);
+        }
+        .firstsearch .sub {
+            position: absolute;
+            top:25px;
+            left: 1299px;
+            height: 50px;
+            width: 50px;
+            background-color: rgb(255, 255, 255);
+            transition: all .3s ease;
+            border: solid 1px rgb(100, 100, 100,.4);
+        }
+        .firstsearch .sub:hover {
+            background-color: rgb(240, 120, 40);
+        }
+        .diyihe {
+            height: 465px;
+            width: 1240px;
+            position: absolute;
+            left: 145px;
+            top:167px;
+            background-image: url(mi/背景1.webp);
+            background-size: 1240px;
+            z-index: 1;
+            transition: all .5s ease;
+        }
+        .dierhe {
+            background-color: rgb(110, 108, 108,.8);
+            height: 465px;
+            width: 290px;
+            position: absolute;
+            top: 0;
+             overflow: hidden; 
+             z-index: 1;
+        }
+        .dierhe ol {
+            display: block;
+            height: 45px;
+            width: 180px;
+            font-size: 15px;
+            line-height: 50px;
+            z-index: 1;
+        } 
+        .dierhe a {
+            display: block;
+            height: 55px;
+            width: 180px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        .dierhe ol:hover {
+            background: linear-gradient(to top,rgb(179, 168, 21),#f3962d);
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+        .disanhe {
+            display: inline-block;
+            height: 465px;
+            position: absolute;
+            left: 291px;
+            top:0px;
+            width: 953px;
+            background: rgb(7, 7, 7,.3);
+            transition: all .7s ease;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .dierhe:hover {
+            width: 1245px;
+            overflow: visible;
+            transition: all .8s ease;
+        }     
+        .disanhe ul {
+            display: block;
+            height: 55px;
+            width: 90px;
+            color: white;
+            font-size: 17px;
+            line-height: 55px;
+            margin: 5px 30px;
+        }  
+        .disanhe ul:hover {
+            font-size: 20px;
+            background: linear-gradient(to right,rgb(219, 49, 134),#2daaf3);
+            transition: all .5s ease;
+        }
+        .disanhe ul a {
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+        }
+        .changeimg {
+            height: 10px;
+            width: 100px;
+            position: absolute;
+            top: 440px;
+            left: 1127px;
+        }
+        .underdiv {
+            height: 150px;
+            /* background-color: #2daaf3; */
+            margin-top: 645px;
+        }
+        .jinling {
+            height: 153px;
+            width: 277px;
+            margin-top: 15px;
+            margin-left: 155px;
+            background-color: #443f3a;
+        }
+        .underdiv a {
+            display: inline-block;
+            height: 150px;
+            width: 300px;
+            /* background-color: aqua; */
+            margin-left: 10px;
+            margin-top: 10px;
+            transition: all .5s ease;
+        }
+        .underdiv a:hover {
+            margin-top: 5px;
+            box-shadow: 0 0 5px black;
+        }
+        .underdiv a img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="guding" id="lan">
+        <a href="#"><img src="mi/mi11.png" alt=""><p>手机APP</p></a>
+        <a href="#"><img src="mi/mi21.png" alt=""><p>个人中心</p></a>
+        <a href="#"><img src="mi/mi31.png" alt=""><p>售后服务</p></a>
+        <a href="#"><img src="mi/mi41.png" alt=""><p>人工客服</p></a>
+        <a href="#"><img src="mi/mi51.png" alt=""><p>购物车</p></a>
+    </div>
+    <div class="headtitle">
+        <div class="divfirst">
+            <a href="#">小米商城</a>|
+            <a href="">MIUI</a>|
+            <a href="">loT</a>|
+            <a href="">云服务</a>|
+            <a href="">天星数科</a>|
+            <a href="">有品</a>|
+            <a href="">小爱开放平台</a>|
+            <a href="">企业团购</a>|
+            <a href="">资质证照</a>|
+            <a href="">协议规则</a>|
+            <a hrefb="" id="downapp">下载app</a>|
+            <a href="">智能生活</a>|
+            <a href="">Select Location</a>
+            <span style="width: 150px;display: inline-block;"></span>
+            <a href="">登陆</a>
+            <a href="">注册</a>
+            <a href="">消息通知</a>
+            <a href="#" style="background-color: rgb(73, 78, 78);padding: 0 20px;"><img src="mi/mi51.png" style="height: 15px;width: 15px;">购物车(0)</a>
+        </div>
+    </div>
+    <div class="divsecond" id="QQma">
+        <img src="mi/开发者QQ二维码.png" style="padding: 10px;height: 150px;" title="开发者QQ">
+    </div>
+    <div class="firstsearch">
+        <img src="mi/logo-mi2.png" style="height: 60px;width: 60px;position: absolute;top: 25px;left: 135px;">
+        <div>
+            <a href="#">小米手机</a>
+            <a href="#">Redmi红米</a>
+            <a href="#">电视</a>
+            <a href="#">笔记本</a>
+            <a href="#">家电</a>
+            <a href="#">路由器</a>
+            <a href="#">智能硬件</a>
+            <a href="#">服务</a>
+            <a href="#">社区</a>
+        </div>
+        <input type="search" class="search" id="searchin" value="">
+        <input type="submit" class="sub" id="subbutton" value="🔍">
+        <hr style="margin-top: 100px;">
+        <div style="height: 300px;background-color: #ffffff;margin-top: 100px;width: 1515px;position: absolute;left: 0;">
+
+        </div>
+    </div>
+    
+    <div class="diyihe" id="backimg">
+        <div class="dierhe">
+            <ul>
+                <ol><a href="#">手机电话卡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">电视盒子&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">笔记本显示器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">家电插线板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">出行穿戴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">智能路由器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">电源配件&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">健康儿童&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">耳机音箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+                <ol><a href="#">生活箱包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></ol>
+            </ul>
+            <div class="disanhe">
+                <ul>
+                    <a href="firstDaywork.html">仿写小米官网</a>
+                </ul>
+                <ul>
+                    <a href="firstDaywork.html">开发者微信</a>
+                </ul>
+                <ul>
+                    <a href="firstDaywork.html">1228719564</a>
+                </ul>
+            </div>
+        </div>
+        <form class="changeimg" id="gaiimg">
+                <input type="radio" name="bak">
+                <input type="radio" name="bak">
+                <input type="radio" name="bak">
+        </form>
+    </div>
+    <div class="underdiv">
+        <div class="jinling"></div>
+         <a href="#" style="margin-left: 315px;"><img src="mi/underdiv1.jpg" alt=""></a>
+         <a href="#"><img src="mi/underdiv2.jpg" alt=""></a>
+         <a href="#"><img src="mi/underdiv3.jpg" alt=""></a>
+    </div>
+
+    <script>
+       
+        var search = document.getElementById('searchin');
+        var subbutter = document.getElementById('subbutton');
+        var time = 1;
+        function textshow(){
+            if(time == 1)
+                search.value = '【以旧换新】至低0元换新机';
+            else if(time == 2 )
+              search.value = '智能';
+            else if(time == 3 )
+              search.value = '小米11';
+            else if(time == 4){
+                search.value = '黑鲨4';
+                time=0;
+            }
+               time++;
+                setTimeout(textshow,5000); 
+        };  
+        textshow();
+        search.onfocus = function(){
+            if(time>=1&&time<=4)
+            {
+                search.value = '';
+                search.className = 'searchnew';
+            }
+            
+            time = 10;
+        }
+        search.onblur = function(){
+        if(search.value=='')
+        {
+            search.className = 'search';
+            search.value = '【以旧换新】至低0元换新机';
+                time=1;
+            }
+        }
+        var QQma = document.getElementById('QQma');
+        var downapp = document.getElementById('downapp');
+        downapp.onmouseover = function (){
+            QQma.style.display = 'block';
+        }
+        QQma.onmouseover = function (){
+            QQma.style.display = 'block';
+        }
+        downapp.onmouseleave = function(){
+            QQma.style.display = 'none'; 
+        }
+        QQma.onmouseleave = function(){
+            QQma.style.display = 'none';
+        }
+        var backimg = document.getElementById('backimg');
+        var cimg = document.getElementById('gaiimg').getElementsByTagName('input');
+        function imgshow(){
+            if(backz == 1)
+                backimg.style.backgroundImage = 'url(mi/背景'+ 2 +'.webp)';
+            else if(backz == 2 )
+            backimg.style.backgroundImage = 'url(mi/背景'+ 3 +'.webp)';
+            else if(backz == 3){
+                backimg.style.backgroundImage = 'url(mi/背景'+ 1 +'.webp)';
+                backz=0;
+            }
+               backz++;
+                setTimeout(imgshow,4000); 
+        };  
+        imgshow();  
+            cimg[0].onclick = function(){
+                     backimg.style.backgroundImage = 'url(mi/背景'+ 1 +'.webp)';
+           }
+           cimg[1].onclick = function(){
+                     backimg.style.backgroundImage = 'url(mi/背景'+ 2 +'.webp)';
+           }
+           cimg[2].onclick = function(){
+                     backimg.style.backgroundImage = 'url(mi/背景'+ 3 +'.webp)';
+           }
+         var backz = 1;
+        var lan = document.getElementById('lan').querySelectorAll('img');
+        var lans = document.getElementById('lan').querySelectorAll('a');
+           lans[0].onmouseover = function(){
+               lan[0].src = 'mi/mi'+1+'2.png';
+           }
+           lans[1].onmouseover = function(){
+               lan[1].src = 'mi/mi'+2+'2.png';
+           }
+           lans[2].onmouseover = function(){
+               lan[2].src = 'mi/mi'+3+'2.png';
+           }
+           lans[3].onmouseover = function(){
+               lan[3].src = 'mi/mi'+4+'2.png';
+           }
+           lans[4].onmouseover = function(){
+               lan[4].src = 'mi/mi'+5+'2.png';
+           }
+           lans[0].onmouseleave = function(){
+               lan[0].src = 'mi/mi'+1+'1.png';
+           }
+           lans[1].onmouseleave = function(){
+               lan[1].src = 'mi/mi'+2+'1.png';
+           }
+           lans[2].onmouseleave = function(){
+               lan[2].src = 'mi/mi'+3+'1.png';
+           }
+           lans[3].onmouseleave = function(){
+               lan[3].src = 'mi/mi'+4+'1.png';
+           }
+           lans[4].onmouseleave = function(){
+               lan[4].src = 'mi/mi'+5+'1.png';
+           }
+    
+    </script>
+</body>
+</html>
